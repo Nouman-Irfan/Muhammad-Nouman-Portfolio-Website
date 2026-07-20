@@ -1,0 +1,3 @@
+import type { Metadata } from "next";import { PageHeader } from "../components/SiteChrome";import { CertificateGallery } from "./CertificateGallery";
+export const metadata:Metadata={title:"Certificates",description:"Professional, technical, and university activity certificates."};
+export default function Certificates(){return <><PageHeader eyebrow="Certificates" title="Evidence of continued growth." copy="Verified course certificates spanning applied AI, web development, planning, research, data analysis, and AI infrastructure."/><section className="section"><div className="wrap"><CertificateGallery/></div></section></>}

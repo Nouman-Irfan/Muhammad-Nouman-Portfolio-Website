@@ -1,0 +1,3 @@
+import type { Metadata } from "next";import { PageHeader } from "../components/SiteChrome";import { ProjectExplorer } from "./ProjectExplorer";
+export const metadata:Metadata={title:"Projects",description:"Desktop games, JavaFX applications, and C++ console projects by Muhammad Nouman."};
+export default function Projects(){return <><PageHeader eyebrow="Project archive" title="Learning by building." copy="A selection of games and practical applications that translate programming concepts into complete, usable software."/><section className="section"><div className="wrap"><ProjectExplorer/></div></section></>}
