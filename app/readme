@@ -1,0 +1,10 @@
+This folder contains the portfolio website's main application code.
+
+- Each page folder, such as `about`, `projects`, `skills`, and `contact`, defines a website route.
+- `components` contains shared interface elements used across pages.
+- `data` stores portfolio content such as projects, skills, achievements, and experience.
+- `layout.tsx` defines the shared site layout and metadata.
+- `page.tsx` is the home page.
+- `globals.css` contains the website's global styling and responsive design rules.
+
+Changes to the website's pages, content, or visual presentation will usually be made inside this folder.
