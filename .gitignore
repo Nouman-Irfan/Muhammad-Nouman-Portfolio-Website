@@ -141,3 +141,23 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# Vercel
+.vercel/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.idea/
+.vs/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Private keys and certificates
+*.pem
+*.key
