@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { SiteChrome } from "./components/SiteChrome";
 import "./globals.css";
 
-const geist = Geist({ variable: "--font-sans", subsets: ["latin"] });
-const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
+const geist = localFont({ src: "./fonts/geist-latin.woff2", variable: "--font-sans", weight: "100 900" });
+const mono = localFont({ src: "./fonts/geist-mono-latin.woff2", variable: "--font-mono", weight: "100 900" });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://muhammad-nouman-portfolio.example"),
