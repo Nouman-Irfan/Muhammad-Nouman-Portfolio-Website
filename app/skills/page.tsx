@@ -18,6 +18,11 @@ const skillIcons:Record<string,string>={
   "Visual Studio":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/visualstudio/visualstudio-original.svg",
   "VS Code":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg",
   "IntelliJ IDEA":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg",
+  Windows:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/windows11/windows11-original.svg",
+  macOS:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apple/apple-original.svg",
+  Linux:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg",
+  "Kali Linux":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kalilinux/kalilinux-original.svg",
+  "Arch Linux":"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/archlinux/archlinux-original.svg",
 };
 
 const conceptIcons:Record<string,string>={
@@ -44,4 +49,4 @@ function ConceptIcon({type,name}:{type:string;name:string}){
   </span>;
 }
 
-export default function Skills(){return <><PageHeader eyebrow="Skills & toolkit" title="A growing, practical toolkit." copy="Technologies I use to build, debug, and deliver desktop applications, games, and modern interfaces."/><section className="section"><div className="wrap skill-groups">{skills.map(([group,items],g)=><section key={group}><div className="group-number">0{g+1}</div><div><h2>{group}</h2><div className="skill-grid">{items.map(([name,desc])=><article className="skill-card" key={name}>{skillIcons[name]?<span className="skill-icon has-logo"><img src={skillIcons[name]} alt={`${name} logo`} loading="lazy"/></span>:conceptIcons[name]?<ConceptIcon type={conceptIcons[name]} name={name}/>:<span className="skill-icon">{name.slice(0,2).toUpperCase()}</span>}<div><small>{group}</small><h3>{name}</h3><p>{desc}</p></div></article>)}</div></div></section>)}</div></section></>}
+export default function Skills(){return <><PageHeader eyebrow="Skills & toolkit" title="A growing, practical toolkit." copy="Technologies I use to build, debug, and deliver desktop applications, games, and modern interfaces."/><section className="section"><div className="wrap skill-groups">{skills.map(([group,items],g)=><section className={group==="Operating Systems"?"operating-systems":""} key={group}><div className="group-number">0{g+1}</div><div><h2>{group}</h2><div className="skill-grid">{items.map(([name,desc])=><article className="skill-card" key={name}>{skillIcons[name]?<span className="skill-icon has-logo"><img src={skillIcons[name]} alt={`${name} logo`} loading="lazy"/></span>:conceptIcons[name]?<ConceptIcon type={conceptIcons[name]} name={name}/>:<span className="skill-icon">{name.slice(0,2).toUpperCase()}</span>}<div><small>{group}</small><h3>{name}</h3><p>{desc}</p></div></article>)}</div></div></section>)}</div></section></>}
