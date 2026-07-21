@@ -156,8 +156,8 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
   </>;
 }
 
-export function PageHeader({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
-  return <section className="page-head"><div className="wrap"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p></div></section>;
+export function PageHeader({ eyebrow, title, copy, className = "" }: { eyebrow: string; title: string; copy: string; className?: string }) {
+  return <section className={`page-head ${className}`.trim()}><div className="wrap"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p></div></section>;
 }
 
 export function SocialLinks() {
