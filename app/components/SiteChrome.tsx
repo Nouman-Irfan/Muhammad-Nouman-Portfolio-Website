@@ -1,9 +1,32 @@
 "use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-const nav = [["Home","/"],["About Me","/about"],["Skills","/skills"],["Projects","/projects"],["Education","/education"],["Certificates","/certificates"],["Achievements","/achievements"],["Experience","/experience"],["Contact","/contact"]];
+const nav = [
+  ["Home", "/"],
+  ["About Me", "/about"],
+  ["Skills", "/skills"],
+  ["Projects", "/projects"],
+  ["Education", "/education"],
+  ["Certificates", "/certificates"],
+  ["Achievements", "/achievements"],
+  ["Experience", "/experience"],
+  ["Contact", "/contact"],
+];
+
+const searchPages = [
+  { label: "Home", href: "/", description: "Introduction, featured work, and portfolio highlights.", keywords: "welcome developer software portfolio" },
+  { label: "About Me", href: "/about", description: "Biography, interests, strengths, and professional goals.", keywords: "biography profile muhammad nouman leadership teamwork" },
+  { label: "Skills", href: "/skills", description: "Languages, frameworks, tools, operating systems, and concepts.", keywords: "c++ python java sfml javafx react next windows macos linux kali arch" },
+  { label: "Projects", href: "/projects", description: "Games, desktop applications, and console projects.", keywords: "snake chess todo password github source code" },
+  { label: "Education", href: "/education", description: "BS Computer Science studies, CGPA, and coursework.", keywords: "ucp university cgpa semester courses academics" },
+  { label: "Certificates", href: "/certificates", description: "Professional courses and verified learning certificates.", keywords: "coursera google ai nvidia web development" },
+  { label: "Achievements", href: "/achievements", description: "University activities, competitions, and leadership roles.", keywords: "career connect mushaira think2code ushers team iss events" },
+  { label: "Experience", href: "/experience", description: "Internships and practical professional experience.", keywords: "decodelabs python internship programming" },
+  { label: "Contact", href: "/contact", description: "Email, LinkedIn, GitHub, and availability.", keywords: "connect message hire internship lahore" },
+];
 
 function FooterIcon({ name }: { name: "email" | "github" | "linkedin" | "location" }) {
   const paths = {
@@ -16,12 +39,127 @@ function FooterIcon({ name }: { name: "email" | "github" | "linkedin" | "locatio
 }
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
-  const path = usePathname(); const [dark,setDark]=useState(false); const [open,setOpen]=useState(false); const [scrolled,setScrolled]=useState(false);
-  useEffect(()=>{ const saved=localStorage.getItem("theme"); const value=saved?saved==="dark":matchMedia("(prefers-color-scheme: dark)").matches; setDark(value); document.documentElement.dataset.theme=value?"dark":"light"; },[]);
-  useEffect(()=>{ const fn=()=>setScrolled(scrollY>24); addEventListener("scroll",fn,{passive:true}); return()=>removeEventListener("scroll",fn); },[]);
-  const toggle=()=>{ const value=!dark; setDark(value); document.documentElement.dataset.theme=value?"dark":"light"; localStorage.setItem("theme",value?"dark":"light"); };
-  return <><header className={`nav ${scrolled?"nav-scrolled":""}`}><div className="nav-inner"><Link className="brand" href="/" onClick={()=>setOpen(false)}><span className="brand-photo"><img src="/nouman-profile.png" alt="Muhammad Nouman"/></span><strong>Muhammad Nouman</strong></Link><nav aria-label="Main navigation" className={open?"nav-links open":"nav-links"}>{nav.map(([label,href])=><Link key={href} href={href} onClick={()=>setOpen(false)} className={path===href?"active":""}>{label}</Link>)}</nav><div className="nav-actions"><button className="icon-btn" onClick={toggle} aria-label={`Switch to ${dark?"light":"dark"} mode`}>{dark?"☀":"☾"}</button><button className="icon-btn menu" aria-expanded={open} aria-label="Toggle navigation" onClick={()=>setOpen(!open)}>{open?"×":"≡"}</button></div></div></header><main>{children}</main><footer className="site-footer"><div className="footer-stars" aria-hidden="true"/><div className="footer-content"><section className="footer-intro"><Link className="footer-identity" href="/"><span className="footer-avatar"><img src="/nouman-profile.png" alt="Muhammad Nouman"/></span><strong>Muhammad Nouman</strong></Link><p>Building practical software by day, solving meaningful problems with code.</p></section><nav className="footer-explore" aria-label="Footer navigation"><h2>Explore</h2><div>{nav.map(([label,href])=><Link key={href} href={href}>{label}</Link>)}</div></nav><section className="footer-connect"><h2>Connect</h2><a href="mailto:numanirfan595@gmail.com"><FooterIcon name="email"/><span>numanirfan595@gmail.com</span></a><a href="https://github.com/Nouman-Irfan" target="_blank" rel="noreferrer"><FooterIcon name="github"/><span>GitHub</span><b aria-hidden="true">↗</b></a><a href="https://www.linkedin.com/in/nouman-irfan01" target="_blank" rel="noreferrer"><FooterIcon name="linkedin"/><span>LinkedIn</span><b aria-hidden="true">↗</b></a><p><FooterIcon name="location"/><span>Lahore, Pakistan</span></p></section><small>© {new Date().getFullYear()} Muhammad Nouman. All rights reserved.</small></div></footer></>;
+  const path = usePathname();
+  const [dark, setDark] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    const saved = localStorage.getItem("theme");
+    const value = saved ? saved === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    setDark(value);
+    document.documentElement.dataset.theme = value ? "dark" : "light";
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(scrollY > 24);
+    addEventListener("scroll", handleScroll, { passive: true });
+    return () => removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleKeydown = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        setSearchOpen(true);
+        setOpen(false);
+      }
+      if (event.key === "Escape") setSearchOpen(false);
+    };
+    addEventListener("keydown", handleKeydown);
+    return () => removeEventListener("keydown", handleKeydown);
+  }, []);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previous; };
+  }, [searchOpen]);
+
+  const toggle = () => {
+    const value = !dark;
+    setDark(value);
+    document.documentElement.dataset.theme = value ? "dark" : "light";
+    localStorage.setItem("theme", value ? "dark" : "light");
+  };
+  const closeSearch = () => { setSearchOpen(false); setQuery(""); };
+  const normalized = query.trim().toLowerCase();
+  const results = searchPages.filter((item) => `${item.label} ${item.description} ${item.keywords}`.toLowerCase().includes(normalized));
+
+  return <>
+    <header className={`nav ${scrolled ? "nav-scrolled" : ""}`}>
+      <div className="nav-inner">
+        <Link className="brand" href="/" onClick={() => setOpen(false)}>
+          <span className="brand-photo"><img src="/nouman-profile.png" alt="Muhammad Nouman"/></span>
+          <strong>Muhammad Nouman</strong>
+        </Link>
+        <nav aria-label="Main navigation" className={open ? "nav-links open" : "nav-links"}>
+          {nav.map(([label, href]) => <Link key={href} href={href} onClick={() => setOpen(false)} className={path === href ? "active" : ""}>{label}</Link>)}
+        </nav>
+        <div className="nav-actions">
+          <button className="icon-btn search-trigger" onClick={() => { setSearchOpen(true); setOpen(false); }} aria-label="Search portfolio">
+            <span aria-hidden="true">⌕</span>
+          </button>
+          <button className="icon-btn" onClick={toggle} aria-label={`Switch to ${dark ? "light" : "dark"} mode`}>{dark ? "☀" : "☾"}</button>
+          <button className="icon-btn menu" aria-expanded={open} aria-label="Toggle navigation" onClick={() => setOpen(!open)}>{open ? "×" : "≡"}</button>
+        </div>
+      </div>
+    </header>
+
+    {searchOpen && <div className="search-overlay" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) closeSearch(); }}>
+      <section className="search-dialog" role="dialog" aria-modal="true" aria-labelledby="search-title">
+        <div className="search-heading">
+          <div><span className="eyebrow">Quick navigation</span><h2 id="search-title">Search the portfolio</h2></div>
+          <button className="search-close" onClick={closeSearch} aria-label="Close search">×</button>
+        </div>
+        <label className="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input autoFocus value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search pages, skills, projects..." aria-label="Search pages"/>
+          <kbd>ESC</kbd>
+        </label>
+        <div className="search-meta">
+          <span>{normalized ? `${results.length} result${results.length === 1 ? "" : "s"}` : "Explore every page"}</span>
+        </div>
+        <div className="search-results">
+          {results.map((item, index) => <Link key={item.href} href={item.href} onClick={closeSearch} className={path === item.href ? "current" : ""}>
+            <span className="search-index">{String(index + 1).padStart(2, "0")}</span>
+            <span><strong>{item.label}</strong><small>{item.description}</small></span>
+            <b aria-hidden="true">→</b>
+          </Link>)}
+          {results.length === 0 && <div className="search-empty"><span>⌕</span><h3>No matching page</h3><p>Try searching for skills, projects, certificates, or contact.</p></div>}
+        </div>
+      </section>
+    </div>}
+
+    <main>{children}</main>
+    <footer className="site-footer">
+      <div className="footer-stars" aria-hidden="true"/>
+      <div className="footer-content">
+        <section className="footer-intro">
+          <Link className="footer-identity" href="/"><span className="footer-avatar"><img src="/nouman-profile.png" alt="Muhammad Nouman"/></span><strong>Muhammad Nouman</strong></Link>
+          <p>Building practical software by day, solving meaningful problems with code.</p>
+        </section>
+        <nav className="footer-explore" aria-label="Footer navigation"><h2>Explore</h2><div>{nav.map(([label, href]) => <Link key={href} href={href}>{label}</Link>)}</div></nav>
+        <section className="footer-connect">
+          <h2>Connect</h2>
+          <a href="mailto:numanirfan595@gmail.com"><FooterIcon name="email"/><span>numanirfan595@gmail.com</span></a>
+          <a href="https://github.com/Nouman-Irfan" target="_blank" rel="noreferrer"><FooterIcon name="github"/><span>GitHub</span><b aria-hidden="true">↗</b></a>
+          <a href="https://www.linkedin.com/in/nouman-irfan01" target="_blank" rel="noreferrer"><FooterIcon name="linkedin"/><span>LinkedIn</span><b aria-hidden="true">↗</b></a>
+          <p><FooterIcon name="location"/><span>Lahore, Pakistan</span></p>
+        </section>
+        <small>© {new Date().getFullYear()} Muhammad Nouman. All rights reserved.</small>
+      </div>
+    </footer>
+  </>;
 }
 
-export function PageHeader({eyebrow,title,copy}:{eyebrow:string;title:string;copy:string}){return <section className="page-head"><div className="wrap"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p></div></section>}
-export function SocialLinks(){return <div className="social-row"><a className="button primary" href="https://github.com/Nouman-Irfan" target="_blank" rel="noreferrer">GitHub ↗</a><a className="button secondary" href="https://www.linkedin.com/in/nouman-irfan01" target="_blank" rel="noreferrer">LinkedIn ↗</a><a className="button ghost" href="mailto:numanirfan595@gmail.com">Email me</a></div>}
+export function PageHeader({ eyebrow, title, copy }: { eyebrow: string; title: string; copy: string }) {
+  return <section className="page-head"><div className="wrap"><span className="eyebrow">{eyebrow}</span><h1>{title}</h1><p>{copy}</p></div></section>;
+}
+
+export function SocialLinks() {
+  return <div className="social-row"><a className="button primary" href="https://github.com/Nouman-Irfan" target="_blank" rel="noreferrer">GitHub ↗</a><a className="button secondary" href="https://www.linkedin.com/in/nouman-irfan01" target="_blank" rel="noreferrer">LinkedIn ↗</a><a className="button ghost" href="mailto:numanirfan595@gmail.com">Email me</a></div>;
+}
