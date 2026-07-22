@@ -19,12 +19,12 @@ const nav = [
 const searchPages = [
   { label: "Home", href: "/", description: "Introduction, featured work, and portfolio highlights.", keywords: "welcome developer software portfolio" },
   { label: "About Me", href: "/about", description: "Biography, interests, strengths, and professional goals.", keywords: "biography profile muhammad nouman leadership teamwork" },
-  { label: "Skills", href: "/skills", description: "Languages, frameworks, tools, operating systems, and concepts.", keywords: "c++ python java sfml javafx react next windows macos linux kali arch" },
+  { label: "Skills", href: "/skills", description: "Languages, frameworks, development tools, creative tools, operating systems, and concepts.", keywords: "c++ python java javascript sfml javafx react next bootstrap git cursor figma adobe after effects premiere pro photoshop illustrator canva windows macos linux kali arch chromeos" },
   { label: "Projects", href: "/projects", description: "Games, desktop applications, and console projects.", keywords: "snake chess todo password github source code" },
   { label: "Education", href: "/education", description: "BS Computer Science studies, CGPA, and coursework.", keywords: "ucp university cgpa semester courses academics" },
-  { label: "Certificates", href: "/certificates", description: "Professional courses and verified learning certificates.", keywords: "coursera google ai nvidia web development" },
+  { label: "Certificates", href: "/certificates", description: "Professional courses and verified learning certificates.", keywords: "coursera google ai nvidia web development css css3 johns hopkins" },
   { label: "Achievements", href: "/achievements", description: "University activities, competitions, and leadership roles.", keywords: "career connect mushaira think2code ushers team iss events" },
-  { label: "Experience", href: "/experience", description: "Internships and practical professional experience.", keywords: "decodelabs python internship programming" },
+  { label: "Experience", href: "/experience", description: "Internships, university memberships, and practical professional experience.", keywords: "decodelabs python internship programming ushers club ieee computer society ucp" },
   { label: "Contact", href: "/contact", description: "Email, LinkedIn, GitHub, and availability.", keywords: "connect message hire internship lahore" },
 ];
 

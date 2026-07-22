@@ -14,11 +14,12 @@ export const additionalProjects = [
 ].map(([title,language,category,repo])=>({title,language,category,repo}));
 
 export const skills = [
-  ["Programming Languages",[["C++","Desktop applications, games, memory management, and core problem-solving."],["Python","Clear scripts, small utilities, and programming fundamentals."],["Java","Object-oriented desktop applications and event-driven interfaces."]]],
-  ["Frameworks & Graphics",[["SFML","2D rendering, input handling, audio, and real-time game loops."],["JavaFX","Structured desktop interfaces, scenes, controls, and events."],["React","Reusable component-based user interfaces."],["Next.js","Modern, production-minded React applications."],["Tailwind CSS","Responsive, utility-led interface styling."]]],
-  ["Development Tools",[["Git","Reliable version history and iterative development."],["GitHub","Project publishing, collaboration, and portfolio documentation."],["Visual Studio","C++ development, debugging, and project organization."],["VS Code","Flexible development across languages and toolchains."],["IntelliJ IDEA","Productive Java development, project navigation, and debugging."]]],
-  ["Operating Systems",[["Windows","Daily development, desktop applications, and productivity workflows."],["macOS","Familiarity with Apple desktop workflows and cross-platform environments."],["Linux","Command-line development, open-source tooling, and system fundamentals."],["Kali Linux","Security-focused Linux tools, terminal workflows, and practical exploration."],["Arch Linux","A lightweight, customizable Linux environment for deeper system learning."]]],
-  ["Programming Concepts",[["Dynamic Memory","Responsible allocation, lifetimes, and pointer-based structures."],["Pointers","Memory-aware C++ programming and data manipulation."],["File Handling","Persistent records for practical desktop and console systems."],["Object-Oriented Programming","Encapsulation, inheritance, and maintainable domain models."],["Event-Driven Programming","Responsive interfaces driven by user and system events."],["Problem-Solving","Breaking requirements into testable, logical steps."],["Data Structures","Foundational structures for organizing and processing data."]]],
+  ["Programming Languages",[["C++","Desktop applications, games, memory management, and core problem-solving."],["Python","Clear scripts, small utilities, and programming fundamentals."],["Java","Object-oriented desktop applications and event-driven interfaces."],["JavaScript","Interactive web experiences, browser logic, and modern application development."]]],
+  ["Frameworks & Graphics",[["SFML","2D rendering, input handling, audio, and real-time game loops."],["JavaFX","Structured desktop interfaces, scenes, controls, and events."],["React","Reusable component-based user interfaces."],["Next.js","Modern, production-minded React applications."],["Tailwind CSS","Responsive, utility-led interface styling."],["Bootstrap","Responsive layouts and polished interfaces using a component-first CSS framework."]]],
+  ["Development Tools",[["Git","Reliable version history and iterative development."],["GitHub","Project publishing, collaboration, and portfolio documentation."],["Visual Studio","C++ development, debugging, and project organization."],["VS Code","Flexible development across languages and toolchains."],["IntelliJ IDEA","Productive Java development, project navigation, and debugging."],["Cursor","AI-assisted coding, project navigation, refactoring, and development workflows."]]],
+  ["Creative Tools",[["Figma","Interface design, wireframes, prototypes, and collaborative design systems."],["Adobe After Effects","Motion graphics, visual effects, and animated visual storytelling."],["Adobe Premiere Pro","Video editing, sequencing, transitions, and polished media production."],["Adobe Photoshop","Image editing, visual composition, and digital design assets."],["Adobe Illustrator","Vector graphics, icons, illustrations, and scalable visual assets."],["Canva","Fast, polished layouts for presentations, social media, and visual content."]]],
+  ["Operating Systems",[["Windows","Daily development, desktop applications, and productivity workflows."],["macOS","Familiarity with Apple desktop workflows and cross-platform environments."],["Linux","Command-line development, open-source tooling, and system fundamentals."],["Kali Linux","Security-focused Linux tools, terminal workflows, and practical exploration."],["Arch Linux","A lightweight, customizable Linux environment for deeper system learning."],["ChromeOS","Cloud-focused productivity, browser-based tools, and lightweight computing workflows."]]],
+  ["Programming Concepts",[["Dynamic Memory","Responsible allocation, lifetimes, and pointer-based structures."],["Pointers","Memory-aware C++ programming and data manipulation."],["File Handling","Persistent records for practical desktop and console systems."],["Object-Oriented Programming","Encapsulation, inheritance, and maintainable domain models."],["Event-Driven Programming","Responsive interfaces driven by user and system events."],["Problem-Solving","Breaking requirements into testable, logical steps."],["Data Structures","Foundational structures for organizing and processing data."],["Data Types & Variables","Representing, storing, and transforming values with clear, reliable program state."],["Functions & Modularity","Organizing reusable logic into focused functions and maintainable modules."],["Loops & Conditionals","Controlling program flow through iteration, decisions, and branching logic."],["Error Handling","Anticipating failures and building resilient, understandable recovery paths."]]],
 ] as const;
 
 export const achievements = [
@@ -40,6 +41,7 @@ export const certificates = [
   {title:"AI for Research and Insights",issuer:"Google · Coursera",date:"July 11, 2026",skill:"AI Research",image:"/certificates/ai-research-insights.jpg",pdf:"/certificates/ai-research-insights.pdf"},
   {title:"AI Fundamentals",issuer:"Google · Coursera",date:"June 20, 2026",skill:"Artificial Intelligence",image:"/certificates/ai-fundamentals.jpg",pdf:"/certificates/ai-fundamentals.pdf"},
   {title:"HTML, CSS, and JavaScript for Web Developers",issuer:"Johns Hopkins University · Coursera",date:"June 19, 2026",skill:"Web Development",image:"/certificates/html-css-javascript.jpg",pdf:"/certificates/html-css-javascript.pdf"},
+  {title:"Introduction to CSS3",issuer:"Johns Hopkins University · Coursera",date:"July 22, 2026",skill:"CSS3",image:"/certificates/introduction-to-css3.jpg",pdf:"/certificates/introduction-to-css3.pdf"},
   {title:"AI Infrastructure and Operations Fundamentals",issuer:"NVIDIA · Coursera",date:"June 22, 2026",skill:"AI Infrastructure",image:"/certificates/nvidia-ai-infrastructure.jpg",pdf:"/certificates/nvidia-ai-infrastructure.pdf"},
 ];
 
@@ -55,5 +57,49 @@ export const experiences = [
     skills:["Python","Problem-Solving","Collaboration","Real-World Projects","Remote Work"],
     certificate:"/experience/decodelabs-python-internship.jpg",
     certificatePdf:"/experience/decodelabs-python-internship.pdf",
+    mediaLabel:"View internship certificate ↗",
+    mediaAlt:"DecodeLabs Python Programming Internship completion certificate",
+  },
+  {
+    company:"Ushers Club",
+    role:"Active Member",
+    type:"University Society",
+    duration:"March 2026 - Present",
+    issued:"",
+    description:"Contribute to university events as an active Ushers Club member, supporting guest coordination, event flow, and a professional attendee experience.",
+    highlights:["Support guest reception and movement","Assist with event flow and on-ground coordination","Work collaboratively with fellow club members","Represent the university with professionalism"],
+    skills:["Event Operations","Communication","Teamwork","Hospitality"],
+    certificate:"/experience/ushers-club.png",
+    certificatePdf:"",
+    mediaLabel:"",
+    mediaAlt:"Ushers Club logo",
+  },
+  {
+    company:"IEEE UCP Student Branch",
+    role:"General Member",
+    type:"University Society",
+    duration:"December 2025 - Present",
+    issued:"",
+    description:"Participate as a general member of the Institute of Electrical and Electronics Engineers UCP Student Branch, engaging with a professional community focused on technology, learning, and student development.",
+    highlights:["Engage with technical and professional activities","Connect with students interested in engineering and computing","Support student-branch initiatives","Continue learning through the IEEE community"],
+    skills:["Professional Networking","Technology Community","Collaboration","Continuous Learning"],
+    certificate:"/experience/ieee-ucp-student-branch.png",
+    certificatePdf:"",
+    mediaLabel:"",
+    mediaAlt:"IEEE logo",
+  },
+  {
+    company:"IEEE Computer Society UCP Student Branch",
+    role:"General Member",
+    type:"University Society",
+    duration:"April 2026 - Present",
+    issued:"",
+    description:"Contribute as a general member of the IEEE Computer Society UCP Student Branch, taking part in a student community centered on computing, programming, and technical growth.",
+    highlights:["Participate in computing-focused student activities","Engage with programming and technology initiatives","Collaborate with fellow computer science students","Build technical and professional connections"],
+    skills:["Computer Science","Programming Community","Collaboration","Professional Growth"],
+    certificate:"/experience/ieee-computer-society-ucp.png",
+    certificatePdf:"",
+    mediaLabel:"",
+    mediaAlt:"IEEE Computer Society UCP Student Chapter logo",
   },
 ];

@@ -52,3 +52,6 @@
 .contact-submit{height:50px;margin-top:16px}
 .contact-success{padding:42px 8%}
 @media(max-width:700px){.contact-page-head{padding-top:144px;scroll-margin-top:68px}.contact-form-section{padding-bottom:62px}.contact-form-front{padding:22px 18px}.contact-form-grid{column-gap:0;row-gap:16px}.contact-form-grid textarea{min-height:150px}.contact-success{padding:42px 20px}}
+.experience-logo{cursor:default}.experience-logo:hover{transform:none;box-shadow:none}.experience-logo img{object-fit:contain;padding:22px;background:#fff}
+.experience-card+.experience-card{margin-top:34px}
+.skill-groups>section:nth-child(4){--skill-bubble:#d1436e}.skill-groups>section:nth-child(5){--skill-bubble:#0c9a8a}.skill-groups>section:nth-child(6){--skill-bubble:#d79b13}.concept-variables{--concept:#7259e8}.concept-functions{--concept:#1684c7}.concept-flow{--concept:#e07b25}.concept-errors{--concept:#d1436e}[data-theme="dark"] .skill-icon img[alt="Cursor logo"]{filter:invert(1)}
