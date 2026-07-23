@@ -1,7 +1,22 @@
 import type { Metadata } from "next";
 import { PageHeader } from "../components/SiteChrome";
-import { experiences } from "../data/content";
+import { ExperienceList } from "./ExperienceList";
 
-export const metadata:Metadata={title:"Experience",description:"Internship experience, university memberships, and practical professional development."};
+export const metadata: Metadata = {
+  title: "Experience",
+  description:
+    "Internship experience, university memberships, and practical professional development.",
+};
 
-export default function Experience(){return <><PageHeader eyebrow="Experience & involvement" title="Learning in real-world environments." copy="Internship experience and active university memberships that strengthen my programming, collaboration, leadership, and professional growth."/><section className="section"><div className="wrap experience-list">{experiences.map((item,i)=><article className="experience-card" key={item.company}><div className="experience-rail"><span>0{i+1}</span><i/></div><div className="experience-main"><div className="experience-heading"><div><span className="eyebrow">{item.type}</span><h2>{item.role}</h2><h3>{item.company}</h3></div><div className="duration-badge"><small>Duration</small><strong>{item.duration}</strong>{item.issued&&<span>{item.issued}</span>}</div></div><p className="experience-description">{item.description}</p><div className="experience-columns"><div><h4>Key experience</h4><ul>{item.highlights.map(highlight=><li key={highlight}>{highlight}</li>)}</ul><div className="tags">{item.skills.map(skill=><span key={skill}>{skill}</span>)}</div></div>{item.certificatePdf?<a className="experience-certificate" href={item.certificatePdf} target="_blank" rel="noreferrer"><img src={item.certificate} alt={item.mediaAlt} loading="lazy"/>{item.mediaLabel&&<span>{item.mediaLabel}</span>}</a>:<div className="experience-certificate experience-logo"><img src={item.certificate} alt={item.mediaAlt} loading="lazy"/>{item.mediaLabel&&<span>{item.mediaLabel}</span>}</div>}</div></div></article>)}</div></section></>}
+export default function Experience() {
+  return (
+    <>
+      <PageHeader
+        eyebrow="Experience & involvement"
+        title="Learning in real-world environments."
+        copy="Internship experience and active university memberships that strengthen my programming, collaboration, leadership, and professional growth."
+      />
+      <ExperienceList />
+    </>
+  );
+}
