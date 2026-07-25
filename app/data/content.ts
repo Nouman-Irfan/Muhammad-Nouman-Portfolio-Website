@@ -42,6 +42,7 @@ export const certificates = [
   {title:"AI Fundamentals",issuer:"Google · Coursera",date:"June 20, 2026",skill:"Artificial Intelligence",image:"/certificates/ai-fundamentals.jpg",pdf:"/certificates/ai-fundamentals.pdf"},
   {title:"HTML, CSS, and JavaScript for Web Developers",issuer:"Johns Hopkins University · Coursera",date:"June 19, 2026",skill:"Web Development",image:"/certificates/html-css-javascript.jpg",pdf:"/certificates/html-css-javascript.pdf"},
   {title:"Introduction to CSS3",issuer:"Johns Hopkins University · Coursera",date:"July 22, 2026",skill:"CSS3",image:"/certificates/introduction-to-css3.jpg",pdf:"/certificates/introduction-to-css3.pdf"},
+  {title:"Coding the Static Restaurant Site",issuer:"Johns Hopkins University · Coursera",date:"July 23, 2026",skill:"Static Web Development",image:"/certificates/coding-static-restaurant-site.jpg",pdf:"/certificates/coding-static-restaurant-site.pdf"},
   {title:"AI Infrastructure and Operations Fundamentals",issuer:"NVIDIA · Coursera",date:"June 22, 2026",skill:"AI Infrastructure",image:"/certificates/nvidia-ai-infrastructure.jpg",pdf:"/certificates/nvidia-ai-infrastructure.pdf"},
 ];
 
