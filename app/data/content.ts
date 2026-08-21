@@ -43,6 +43,8 @@ export const certificates = [
   {title:"HTML, CSS, and JavaScript for Web Developers",issuer:"Johns Hopkins University · Coursera",date:"June 19, 2026",skill:"Web Development",image:"/certificates/html-css-javascript.jpg",pdf:"/certificates/html-css-javascript.pdf"},
   {title:"Introduction to CSS3",issuer:"Johns Hopkins University · Coursera",date:"July 22, 2026",skill:"CSS3",image:"/certificates/introduction-to-css3.jpg",pdf:"/certificates/introduction-to-css3.pdf"},
   {title:"Coding the Static Restaurant Site",issuer:"Johns Hopkins University · Coursera",date:"July 23, 2026",skill:"Static Web Development",image:"/certificates/coding-static-restaurant-site.jpg",pdf:"/certificates/coding-static-restaurant-site.pdf"},
+  {title:"Introduction to Javascript and Ajax: Building Web Apps",issuer:"Johns Hopkins University · Coursera",date:"August 20, 2026",skill:"JavaScript & Ajax",image:"/certificates/introduction-javascript-ajax-web-apps.jpg",pdf:"/certificates/introduction-javascript-ajax-web-apps.pdf"},
+  {title:"HTML, CSS, and Javascript for Web Developers Specialization",issuer:"Johns Hopkins University · Coursera",date:"August 21, 2026",skill:"Web Development Specialization",image:"/certificates/html-css-javascript-web-developers-specialization.jpg",pdf:"/certificates/html-css-javascript-web-developers-specialization.pdf",courses:["HTML, CSS, and Javascript for Web Developers","Introduction to CSS3","Coding the Static Restaurant Site","Introduction to Javascript and Ajax: Building Web Apps"]},
   {title:"AI Infrastructure and Operations Fundamentals",issuer:"NVIDIA · Coursera",date:"June 22, 2026",skill:"AI Infrastructure",image:"/certificates/nvidia-ai-infrastructure.jpg",pdf:"/certificates/nvidia-ai-infrastructure.pdf"},
 ];
 
