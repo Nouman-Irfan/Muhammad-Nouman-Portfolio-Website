@@ -33,6 +33,8 @@ export const achievements = [
 ];
 
 export const certificates = [
+  {title:"British Airways Data Science Job Simulation",issuer:"British Airways · Forage",date:"August 12, 2026",skill:"Data Science & Predictive Modeling",image:"/certificates/british-airways-data-science-job-simulation.jpg",pdf:"/certificates/british-airways-data-science-job-simulation.pdf"},
+  {title:"HTML, CSS, and Javascript for Web Developers Specialization",issuer:"Johns Hopkins University · Coursera",date:"August 21, 2026",skill:"Web Development Specialization",image:"/certificates/html-css-javascript-web-developers-specialization.jpg",pdf:"/certificates/html-css-javascript-web-developers-specialization.pdf",courses:["HTML, CSS, and Javascript for Web Developers","Introduction to CSS3","Coding the Static Restaurant Site","Introduction to Javascript and Ajax: Building Web Apps"]},
   {title:"Google AI Professional Certificate",issuer:"Google · Coursera",date:"July 11, 2026",skill:"Applied AI",image:"/certificates/google-ai-professional.jpg",pdf:"/certificates/google-ai-professional.pdf",courses:["AI Fundamentals","AI for Brainstorming and Planning","AI for Research and Insights","AI for Writing and Communicating","AI for Content Creation","AI for Data Analysis","AI for App Building"]},
   {title:"AI for App Building",issuer:"Google · Coursera",date:"July 11, 2026",skill:"AI-assisted Development",image:"/certificates/ai-app-building.jpg",pdf:"/certificates/ai-app-building.pdf"},
   {title:"AI for Brainstorming and Planning",issuer:"Google · Coursera",date:"June 20, 2026",skill:"Planning with AI",image:"/certificates/ai-brainstorming-planning.jpg",pdf:"/certificates/ai-brainstorming-planning.pdf"},
@@ -44,7 +46,6 @@ export const certificates = [
   {title:"Introduction to CSS3",issuer:"Johns Hopkins University · Coursera",date:"July 22, 2026",skill:"CSS3",image:"/certificates/introduction-to-css3.jpg",pdf:"/certificates/introduction-to-css3.pdf"},
   {title:"Coding the Static Restaurant Site",issuer:"Johns Hopkins University · Coursera",date:"July 23, 2026",skill:"Static Web Development",image:"/certificates/coding-static-restaurant-site.jpg",pdf:"/certificates/coding-static-restaurant-site.pdf"},
   {title:"Introduction to Javascript and Ajax: Building Web Apps",issuer:"Johns Hopkins University · Coursera",date:"August 20, 2026",skill:"JavaScript & Ajax",image:"/certificates/introduction-javascript-ajax-web-apps.jpg",pdf:"/certificates/introduction-javascript-ajax-web-apps.pdf"},
-  {title:"HTML, CSS, and Javascript for Web Developers Specialization",issuer:"Johns Hopkins University · Coursera",date:"August 21, 2026",skill:"Web Development Specialization",image:"/certificates/html-css-javascript-web-developers-specialization.jpg",pdf:"/certificates/html-css-javascript-web-developers-specialization.pdf",courses:["HTML, CSS, and Javascript for Web Developers","Introduction to CSS3","Coding the Static Restaurant Site","Introduction to Javascript and Ajax: Building Web Apps"]},
   {title:"AI Infrastructure and Operations Fundamentals",issuer:"NVIDIA · Coursera",date:"June 22, 2026",skill:"AI Infrastructure",image:"/certificates/nvidia-ai-infrastructure.jpg",pdf:"/certificates/nvidia-ai-infrastructure.pdf"},
 ];
 
