@@ -2,9 +2,10 @@ export const featuredProjects = [
   {title:"Nokia Snake Game",category:"Game Development",tech:["C++","SFML"],repo:"https://github.com/Nouman-Irfan/Nokia-Snake-Game-SFML",desc:"A polished desktop recreation of the classic Snake experience using a real-time event loop and SFML graphics.",features:["Responsive controls","Score tracking","Collision system"],mark:"SNAKE"},
   {title:"C++ Chess Game",category:"Game Development",tech:["C++","SFML"],repo:"https://github.com/Nouman-Irfan/Chess-with-SFML",desc:"A visual chess application focused on board state, piece rules, turn management, and interactive play.",features:["Move validation","Turn logic","Desktop UI"],mark:"CHESS"},
   {title:"JavaFX Chess Game",category:"Java",tech:["Java","JavaFX"],repo:"https://github.com/Nouman-Irfan/JavaFX-Chess-Game",desc:"An event-driven chess interface built with Java and JavaFX, applying object-oriented design to game logic.",features:["JavaFX interface","OOP architecture","Game-state handling"],mark:"JAVA"},
-  {title:"To-Do List System",category:"Console Applications",tech:["C++","File Handling"],repo:"https://github.com/Nouman-Irfan/To-Do-List-Management-System",desc:"A practical task-management system with persistent records and a clear console workflow.",features:["Create and update tasks","Persistent storage","Organized menus"],mark:"TODO"},
+  {title:"British Airways AI Customer Booking Prediction Model",category:"Machine Learning",tech:["Python","Scikit-learn"],repo:"https://github.com/Nouman-Irfan/British-Airways-AI-Customer-Booking-Prediction-Model",desc:"A reproducible machine-learning pipeline that predicts whether a customer is likely to complete a flight booking from booking and journey attributes.",features:["Random Forest classifier","End-to-end preprocessing pipeline","ROC-AUC 0.7794 on test data"],mark:"BA AI"},
 ];
 export const additionalProjects = [
+  ["To-Do List System","C++","Console Applications","https://github.com/Nouman-Irfan/To-Do-List-Management-System"],
   ["Student Portal Console App","C++","Console Applications","https://github.com/Nouman-Irfan/Student-Portal-Console-App"],
   ["Grade Calculator","C++","Console Applications","https://github.com/Nouman-Irfan/grade-calculator-console-app"],
   ["Password Strength Checker","C++","Console Applications","https://github.com/Nouman-Irfan/password-strength-checker"],
